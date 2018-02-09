@@ -18,4 +18,8 @@ The idea is to demonstrate how to to setup an apache spark environment with dock
 
 STEPS TO RUN
 ========
-1. Open a terminal and run this command `sudo docker pull mesosphere/spark` .
+1. Pull Docker Image From DockerHub: Open a terminal and run this command `sudo docker pull mesosphere/spark` .
+This may take a while to download the spark docker image.
+2. Test Image Download: When image download completes, run this command `sudo docker images` .
+If your screen looks like the screen shot below, that means you have successfully downloaded the spark docker image on your machine.
+![Docker Images](/screenshots/sp1.jpg)
