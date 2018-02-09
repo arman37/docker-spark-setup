@@ -23,3 +23,6 @@ This may take a while to download the spark docker image.
 2. Test Image Download: When image download completes, run this command `sudo docker images` .
 If your screen looks like the screen shot below, that means you have successfully downloaded the spark docker image on your machine.
 ![Docker Images](/screenshots/sp1.jpg)
+
+3. Clone docker-spark-setup Repo: Open another terminal and run this git command `git clone https://github.com/arman37/docker-spark-setup.git` .
+After cloning completes, cd to docker-spark-setup directory. ( `cd docker-spark-setup` ).
