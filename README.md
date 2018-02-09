@@ -25,4 +25,13 @@ If your screen looks like the screen shot below, that means you have successfull
 ![Docker Images](/screenshots/sp1.jpg)
 
 3. Clone docker-spark-setup Repo: Open another terminal and run this git command `git clone https://github.com/arman37/docker-spark-setup.git` .
-After cloning completes, cd to docker-spark-setup directory. ( `cd docker-spark-setup` ).
+After cloning completes, cd to docker-spark-setup directory ( `cd docker-spark-setup` ).
+
+4. Packaging Driver Program: If you skipped prerequisite step 2 skip this step too. Otherwise follow along.
+cd to driver-apps/java ( `cd driver-apps/java` ). After that, run maven command `mvn test` .
+If your screen looks like the screen shot below, that means your maven test command successfully executed.
+![maven build](/screenshots/sp2.png)
+
+After that, run maven command `mvn package` .
+your screen should look like the screen shot below
+![maven package](/screenshots/sp3.png)
