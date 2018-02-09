@@ -54,3 +54,15 @@ your screen should look like the screen shot below
 ![maven package](/screenshots/sp7.png)
 
 Here we have sorted 100,000 numbers of random integer values ranging from 13 to 76,531 and saved the sorted numbers to a directory named [some-random-numbers]-sorted-output in dist directory.
+
+8. Test Sorting Result: From the same terminal run command `ls` .
+you'll see a directory named [some-random-numbers]-sorted-output. cd to this directory ( like `cd 1518166289584-sorted-output` ).
+Into that directory you'll see part-00000 text file.
+your screen should look like the screen shot below
+![maven package](/screenshots/sp8.png)
+
+Now run this command `cat part-00000` .
+your screen should look like the screen shot below
+![maven package](/screenshots/sp9.png)
+
+Congratulations!!! you have successfully deployed a spark driver application. (Y) :) 
