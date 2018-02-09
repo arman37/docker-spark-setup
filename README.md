@@ -44,3 +44,7 @@ This command will run three docker container on your machine, your screen should
 To check running docker containers run this command `sudo docker ps` .
 your screen should look like the screen shot below
 ![maven package](/screenshots/sp5.png)
+
+6. Open Container spark-worker-1 Bash: From any terminal run command `sudo docker exec -ti spark-worker-1 bash` .
+your screen should look like the screen shot below
+![maven package](/screenshots/sp6.png)
