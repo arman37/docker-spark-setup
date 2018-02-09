@@ -14,7 +14,7 @@ The idea is to demonstrate how to to setup an apache spark environment with dock
 
 # Prerequisites #
 1. Install Docker(to install docker on your machine go to [Docker Setup](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04) page).
-2. Install Docker Composer(to install docker composer on your machine go to [Docker Composer Setup](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-14-04) page).
+2. Install Docker Compose(to install docker compose on your machine go to [Docker Compose Setup](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-14-04) page).
 3. Install Apache Maven(Skip this step if you just want to run the already existing jar file, otherwise follow this [Maven Setup](https://maven.apache.org/install.html) page).
 
 STEPS TO RUN
@@ -37,7 +37,7 @@ After that, run maven command `mvn package` .
 your screen should look like the screen shot below
 ![maven package](/screenshots/sp3.png)
 
-5. Running Docker Composer: If you followed step 4 then cd back to docker-spark-setup directory ( `cd ../..` ).
+5. Running Docker Compose: If you followed step 4 then cd back to docker-spark-setup directory ( `cd ../..` ).
 From docker-spark-setup directory run command `sudo docker-compose up` . Please make sure no other service on your machine using port 8080.
 This command will run three docker container on your machine, your screen should look like the screen shot below
 ![maven package](/screenshots/sp4.png)
