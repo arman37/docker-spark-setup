@@ -8,6 +8,7 @@ The idea is to demonstrate how to to setup an apache spark environment with dock
 # Complete Stack #
 
 * [Docker](https://www.docker.com)
+* [Docker Compose](https://docs.docker.com/compose)
 * [Apache Spark](https://spark.apache.org)
 * [Apache Maven](https://maven.apache.org)
 * [Java](http://www.oracle.com/technetwork/java/index.html)
