@@ -48,3 +48,9 @@ your screen should look like the screen shot below
 6. Open Container spark-worker-1 Bash: From any terminal run command `sudo docker exec -ti spark-worker-1 bash` .
 your screen should look like the screen shot below
 ![maven package](/screenshots/sp6.png)
+
+7. Deploy Driver App: From that terminal run this command `./bin/spark-submit --class com.dsi.spark.SortingTask /usr/spark-2.2.1/jars/sorting-1.0-SNAPSHOT.jar /usr/spark-2.2.1/test/resources/random-numbers.txt` .
+your screen should look like the screen shot below
+![maven package](/screenshots/sp7.png)
+
+Here we have sorted 100,000 numbers of random integer values ranging from 13 to 76,531 and saved the sorted numbers to a directory named [some-random-numbers]-sorted-output in dist directory.
