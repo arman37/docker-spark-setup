@@ -35,3 +35,12 @@ If your screen looks like the screen shot below, that means your maven test comm
 After that, run maven command `mvn package` .
 your screen should look like the screen shot below
 ![maven package](/screenshots/sp3.png)
+
+5. Running Docker Composer: If you followed step 4 then cd back to docker-spark-setup directory ( `cd ../..` ).
+From docker-spark-setup directory run command `sudo docker-compose up` . Please make sure no other service on your machine using port 8080.
+This command will run three docker container on your machine, your screen should look like the screen shot below
+![maven package](/screenshots/sp4.png)
+
+To check running docker containers run this command `sudo docker ps` .
+your screen should look like the screen shot below
+![maven package](/screenshots/sp5.png)
