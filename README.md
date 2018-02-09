@@ -5,7 +5,7 @@
 The idea is to demonstrate how to to setup an apache spark environment with docker container and a Java driver application to test on one container.
 
 
-# Complete Stack #
+## Complete Stack
 
 * [Docker](https://www.docker.com)
 * [Docker Compose](https://docs.docker.com/compose)
@@ -13,13 +13,12 @@ The idea is to demonstrate how to to setup an apache spark environment with dock
 * [Apache Maven](https://maven.apache.org)
 * [Java](http://www.oracle.com/technetwork/java/index.html)
 
-# Prerequisites #
+## Prerequisites
 1. Install Docker(to install docker on your machine go to [Docker Setup](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04) page).
 2. Install Docker Compose(to install docker compose on your machine go to [Docker Compose Setup](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-14-04) page).
 3. Install Apache Maven(Skip this step if you just want to run the already existing jar file, otherwise follow this [Maven Setup](https://maven.apache.org/install.html) page).
 
-STEPS TO RUN
-========
+## STEPS TO RUN
 1. Pull Docker Image From DockerHub: Open a terminal and run this command `sudo docker pull mesosphere/spark` .
 This may take a while to download the spark docker image.
 2. Test Image Download: When image download completes, run this command `sudo docker images` .
@@ -68,3 +67,7 @@ your screen should look like the screen shot below
 ![maven package](/screenshots/sp9.png)
 
 Congratulations!!! you have successfully deployed a spark driver application. (Y) :)
+
+## license
+
+MIT
