@@ -27,6 +27,8 @@ services:
     volumes:
       - ./conf/master:/conf
       - ./data:/tmp/data
+      - ./driver-apps/java/target/sorting-1.0-SNAPSHOT.jar:/usr/spark-2.2.1/jars/sorting-1.0-SNAPSHOT.jar
+      - ./driver-apps/java/src/test/resources/random-numbers.txt:/usr/spark-2.2.1/test/resources/random-numbers.txt
 
   worker-1:
     image: mesosphere/spark
@@ -54,8 +56,6 @@ services:
     volumes:
       - ./conf/worker:/conf
       - ./data:/tmp/data
-      - ./driver-apps/java/target/sorting-1.0-SNAPSHOT.jar:/usr/spark-2.2.1/jars/sorting-1.0-SNAPSHOT.jar
-      - ./driver-apps/java/src/test/resources/random-numbers.txt:/usr/spark-2.2.1/test/resources/random-numbers.txt
 
   worker-2:
     image: mesosphere/spark
