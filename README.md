@@ -22,7 +22,7 @@ The idea is to demonstrate how to to setup an apache spark environment with dock
 1. Pull Docker Image From DockerHub: Open a terminal and run this command `sudo docker pull mesosphere/spark` .
 This may take a while to download the spark docker image.
 2. Test Image Download: When image download completes, run this command `sudo docker images` .
-If your screen looks like the screen shot below, that means you have successfully downloaded the spark docker image on your machine.
+If your screen looks like the screenshot below, that means you have successfully downloaded the spark docker image on your machine.
 ![Docker Images](/screenshots/sp1.jpg)
 
 3. Clone docker-spark-setup Repo: Open another terminal and run this git command `git clone https://github.com/arman37/docker-spark-setup.git` .
@@ -30,40 +30,40 @@ After cloning completes, cd to docker-spark-setup directory ( `cd docker-spark-s
 
 4. Packaging Driver Program: If you skipped prerequisite step 3, skip this step too. Otherwise follow along.
 cd to driver-apps/java ( `cd driver-apps/java` ). After that, run maven command `mvn test` .
-If your screen looks like the screen shot below, that means your maven test command successfully executed.
+If your screen looks like the screenshot below, that means your maven test command successfully executed.
 ![maven build](/screenshots/sp2.png)
 
 After that, run maven command `mvn package` .
-your screen should look like the screen shot below
+your screen should look like the screenshot below
 ![maven package](/screenshots/sp3.png)
 
 5. Running Docker Compose: If you followed step 4 then cd back to docker-spark-setup directory ( `cd ../..` ).
-From docker-spark-setup directory run command `sudo docker-compose up` . Please make sure no other service on your machine using port 8080.
-This command will run three docker container on your machine, your screen should look like the screen shot below
+From docker-spark-setup directory run command `sudo docker-compose up` . Please make sure no other service on your machine using ports 8080, 4040, 8881, 8882.
+This command will run three docker container on your machine, your screen should look like the screenshot below
 ![maven package](/screenshots/sp4.png)
 
 To check running docker containers run this command `sudo docker ps` .
-your screen should look like the screen shot below
+your screen should look like the screenshot below
 ![maven package](/screenshots/sp5.png)
 
-6. Open Container spark-worker-1 Bash: From any terminal run command `sudo docker exec -ti spark-worker-1 bash` .
-your screen should look like the screen shot below
+6. Open Container spark-master Bash: From any terminal run command `sudo docker exec -ti spark-master bash` .
+your screen should look like the screenshot below
 ![maven package](/screenshots/sp6.png)
 
-7. Deploy Driver App: From that terminal run this command `./bin/spark-submit --class com.dsi.spark.SortingTask /usr/spark-2.2.1/jars/sorting-1.0-SNAPSHOT.jar /usr/spark-2.2.1/test/resources/random-numbers.txt` .
-your screen should look like the screen shot below
+7. Deploy Driver App: To ensure the driver application is deployed on the worker nodes (cluster), we should supply the URL of the spark master node. From that terminal run this command `./bin/spark-submit --class com.dsi.spark.SortingTask --master spark://master:7077 /usr/spark-2.2.1/jars/sorting-1.0-SNAPSHOT.jar /usr/spark-2.2.1/test/resources/random-numbers.txt` .
+your screen should look like the screenshot below
 ![maven package](/screenshots/sp7.png)
 
 Here we have sorted 100,000 numbers of random integer values ranging from 13 to 76,531 and saved the sorted numbers to a directory named [some-random-numbers]-sorted-output in dist directory.
 
 8. Test Sorting Result: From the same terminal run command `ls` .
-you'll see a directory named [some-random-numbers]-sorted-output. cd to this directory ( like `cd 1518166289584-sorted-output` ).
+you'll see a directory named [some-random-numbers]-sorted-output. cd to this directory ( like `cd 1518533118918-sorted-output/` ).
 Into that directory you'll see part-00000 text file.
-your screen should look like the screen shot below
+your screen should look like the screenshot below
 ![maven package](/screenshots/sp8.png)
 
 Now run this command `cat part-00000` .
-your screen should look like the screen shot below
+your screen should look like the screenshot below
 ![maven package](/screenshots/sp9.png)
 
 Congratulations!!! you have successfully deployed a spark driver application. (Y) :)
