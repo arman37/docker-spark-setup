@@ -55,7 +55,6 @@ services:
       - 8081:8081
     volumes:
       - ./conf/worker:/conf
-      - ./data:/tmp/data
 
   worker-2:
     image: mesosphere/spark
@@ -82,4 +81,3 @@ services:
       - 8082:8082
     volumes:
       - ./conf/worker:/conf
-      - ./data:/tmp/data
