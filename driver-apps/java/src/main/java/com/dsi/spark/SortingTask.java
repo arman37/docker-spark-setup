@@ -39,11 +39,11 @@ public class SortingTask {
    */
   public void run(String inputFilePath) {
     /*
-     * This is the address of the Spark cluster. We will call the task from WordCountTest and we
+     * This is the address of the Spark cluster. We will call the task from SortingTest and we
      * use a local standalone cluster. [*] means use all the cores available.
      * See {@see http://spark.apache.org/docs/latest/submitting-applications.html#master-urls}.
      */
-    String master = "local[*]";
+    String master = "local[4]";
 
     /*
      * Initialises a Spark context.
@@ -61,7 +61,7 @@ public class SortingTask {
     JavaRDD<Integer> formattedData;
 
     String outputDirName;
-    long sortingTimeInMillis, nowInMillis;
+    long nowInMillis;
 
     distData = context.textFile(inputFilePath);
     formattedData = distData
@@ -69,18 +69,14 @@ public class SortingTask {
                       .map(str -> Integer.parseInt(str.trim()));
     distData = null;
 
-    final Calendar before = Calendar.getInstance();
     sortedData = formattedData.sortBy(num -> num, true, 0);
     formattedData = null;
-    final Calendar after = Calendar.getInstance();
-    sortingTimeInMillis = after.getTimeInMillis() - before.getTimeInMillis();
 
     nowInMillis = Calendar.getInstance().getTimeInMillis();
     outputDirName = nowInMillis + "-sorted-output";
     sortedData.saveAsTextFile(outputDirName);
     sortedData.foreach(num -> System.out.println(num));
 
-    System.out.println("Sorting took " + sortingTimeInMillis + " milliseconds to complete");
     System.out.println("Sorted result has been saved as a text file in a directory named " + outputDirName + " in your project root directory.");
 
     //LOGGER.info(String.format("Sorting took [%d] milliseconds to complete.", sortingTimeInMillis));
